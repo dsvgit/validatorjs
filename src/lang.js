@@ -6,7 +6,9 @@ var require_method = require;
 
 var container = {
 
-  messages: {},
+  messages: {
+    ru: require('./lang/ru')
+  },
 
   /**
    * Set messages for language
@@ -45,8 +47,8 @@ var container = {
   _load: function(lang) {
     if (!this.messages[lang]) {
       try {
-        var rawMessages = require_method('./lang/' + lang);
-        this._set(lang, rawMessages);
+        // var rawMessages = require_method('./lang/' + lang);
+        // this._set(lang, rawMessages);
       } catch (e) {}
     }
   },
